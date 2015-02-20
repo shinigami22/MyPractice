@@ -18,7 +18,7 @@
 	</tr>
 </table>
 <div class="form-buttons">
-	<%= submit tag("Create Subject") %>
+	<%= submit_tag("Create Subject") %>
 
 </div>
 <% end %>

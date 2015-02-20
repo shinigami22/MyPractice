@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-	layout false
+	layout "admin"
   def index
 	#using a named scope or customised Query sorted defined in the model: sorted
   	@subjects = Subject.sorted
@@ -20,6 +20,7 @@ class SubjectsController < ApplicationController
 	# Save the object
 	if @subject.save
 	#if save suceeds, redirect to the index action
+	flash[:notice] = "Subject created successfully."
 	redirect_to(:action => 'index')
 	else
 	#if save fails, redisplay the form so user can fix problems
@@ -35,6 +36,7 @@ class SubjectsController < ApplicationController
 	# Update the object
 	if @subject.update_attributes(subject_params)
 	#if update suceeds, redirect to the index action
+	 flash[:notice] = "Subject updated successfully."
 	redirect_to(:action => 'show', :id =>@subject.id)
 	else
 	#if update fails, redisplay the form so user can fix problems
@@ -45,10 +47,12 @@ class SubjectsController < ApplicationController
  		 @subject=Subject.find(params[:id])
  	end
 
-	def destroy
-	
+
+	 def destroy
 		@subject = Subject.find(params[:id]).destroy
+		 flash[:notice] = "Subject '#{@subject.name}' destroyed successfully."
 		redirect_to(:action => 'index')
+		
 	end
 	
 	#Strong Params are decleared as private for secure accessibilty
