@@ -1,0 +1,15 @@
+<h1>Hello World</h1>
+<h3>1+1=<%=1+1%></h3>
+<br/>
+<% target="world"%>
+<%= "hello #{target}"%>
+<br/>
+<% @array.each do |n| %>
+<%=n%><br/>
+<% end %>
+<%=link_to('hello page 1 parameter',{:action => 'hello',:page => 5, :id => 20})%>
+<h3><a href="/demo/index">hello page 2</a></h3>
+<br/>
+ID: <%=params[:id]%><br/>
+ID: <%= @id%><br/>
+Page: <%= @page.to_i + 1%><br/>
