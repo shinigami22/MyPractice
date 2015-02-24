@@ -2,20 +2,20 @@
 
 
 <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')%>
-<div class="subjects show">
+		<div class="subjects show">
 		<h2>Show Subject</h2>
-		<table summary="Summary detail view">
-		<tr>
+		<table class="center" summary="Summary detail view">
+				<tr>
 				<th>Name</th>
-				<td><%= @subject.name %></td>
-			</tr>
-			<tr>
-					<th>Position</th>
+						<td><%= @subject.name %></td>
+				</tr>
+				<tr>
+						<th>Position</th>
 						<td><%= @subject.position %></td>			
-			</tr>
+				</tr>
 				<tr>
 						<th>Visible</th>
-							<td><%= @subject.visible ? 'true' : 'false' %></td>				
+						<td><%= @subject.visible ? 'true' : 'false' %></td>				
 				</tr>
 				<tr>
 						<th>Created</th>
@@ -25,5 +25,5 @@
 						<th>Updated</th>
 						<td><%= @subject.updated_at %></td>				
 				</tr>
+		</table>
 </div>
-</table>
